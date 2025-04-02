@@ -1,0 +1,118 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #787777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 480px;
+    background-color: #000000;
+    border-radius: 20px;
+    border: solid 2px rgba(255, 0, 0, 0.599);
+    padding: 30px;
+    box-shadow: 35px 55px 15px rgba(0, 0, 0, 0.587);
+    transition: transform 1s, box-shadow 1s;
+}
+
+.calculator:hover {
+    transform: scale(1.02);
+    box-shadow: 25px 40px 8px rgba(0, 0, 0, 0.587);
+}
+
+input {
+    width: 300px;
+    height: 60px;
+    padding: 10px;
+    font-size: 32px;
+    text-align: right;
+    background-color: #fff;
+    border: solid 2px rgba(255, 0, 0, 0.599);
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 1s ease;
+}
+
+input:focus {
+    background-color: #ffffffda;
+    outline: none;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.btn {
+    height: 60px;
+    width: 70px;
+    font-size: 28px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    border: solid 1px rgba(226, 43, 43, 0.729);
+    background-color: #fff;
+    color: #222;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn.operator {
+    background-color: #444;
+    color: #fff;
+}
+
+.btn.operator:hover {
+    background-color: #555;
+}
+
+.btn.equal {
+    background-color: #000;
+    color: #fff;
+    width: 145px;
+    grid-column: span 2;
+}
+
+#last {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn.equal:hover {
+    background-color: #333;
+}
+
+.btn.clear,
+.btn.delete {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn.clear:hover,
+.btn.delete:hover {
+    background-color: #bbb;
+}
+
+@keyframes buttonPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
